@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مولّد كود تفعيل Squeeze — نسختك الخاصة</title>
+<style>
+  body{font-family:Tahoma,Arial;background:#f4f4f8;margin:0;padding:40px}
+  .box{max-width:640px;margin:0 auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+  h1{font-size:20px;color:#d24949;margin-top:0}
+  input,button{font-family:inherit;font-size:15px;padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;box-sizing:border-box}
+  button{background:#d24949;color:#fff;border:none;cursor:pointer;margin-top:12px;font-weight:bold}
+  button:hover{background:#b73c3c}
+  .out{margin-top:16px;background:#99ffcc;border:1px solid #2a8;padding:12px;border-radius:8px;word-break:break-all;direction:ltr;text-align:left;display:none}
+  .hint{color:#777;font-size:12px;margin-top:14px;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>مولّد كود تفعيل قالب Squeeze (خادمك الخاص)</h1>
+  <label>أدخل رقم المدونة (Blog ID):</label>
+  <input id="blogId" placeholder="مثال: 13366800006514606" oninput="gen()">
+  <div class="out" id="out"></div>
+  <div class="hint">
+    الصيغة الداخلية: base64("Squeeze&lt;BlogID&gt;_Activation&lt;timestamp&gt;")<br>
+    انسخ الكود وضعه في القالب كقيمة LicenseKey — سيرفرك (Code.gs) هو من سيصادق عليه.<br>
+    ملاحظة: الصفحة تعمل محليًا بالكامل ولا ترسل أي بيانات لأي طرف.
+  </div>
+</div>
+<script>
+function gen(){
+  var id=document.getElementById('blogId').value.trim();
+  var out=document.getElementById('out');
+  if(!/^\d{10,20}$/.test(id)){out.style.display='none';return;}
+  var raw='Squeeze'+id+'_Activation'+Date.now();
+  var key=btoa(raw);
+  out.style.display='block';
+  out.innerHTML='<b>LicenseKey:</b><br>'+key+'<br><br><b>مفكوك:</b><br>'+raw;
+}
+</script>
+</body>
+</html>
