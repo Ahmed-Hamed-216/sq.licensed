@@ -31,7 +31,7 @@
 ### 3) ارفع السكربت على استضافة ثابتة
 الأسهل: مستودع GitHub خاص بك → Settings → Pages → ضع الملف باسم مثل
 `scripts@2.3.1.licensed.min.js` وستصبح روحه:
-`[https://ahmed-hamed-216.github.io/sq.licensed/scripts@2.3.1.licensed.min.js](https://ahmed-hamed-216.github.io/sq.licensed/sq.licensed.min.js)`
+`https://ahmed-hamed-216.github.io/sq.licensed/sq.licensed.min.js`
 
 ### 4) عدّل القالب
 في ملف القالب (Squeeze 2.3.1.txt) استبدل:
